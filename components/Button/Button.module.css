@@ -29,3 +29,18 @@
 	color: var(--white);
 	background-color: var(--primary)
 }
+
+.arrow {
+	display: inline-block;
+	margin-left: 10px;
+	transition: all .3s;
+}
+
+.primary svg,
+.ghost:hover {
+	fill: var(--white);
+}
+
+.down{
+	transform: rotate(90deg);
+}
