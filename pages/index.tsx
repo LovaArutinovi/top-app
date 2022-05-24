@@ -11,10 +11,12 @@ export default function Home() {
       console.log('unmount')
     }
   });
-
-  useEffect(()=>{
-      console.log('mounted')
+  
+  useEffect(()=>{  
+      console.log('mounted');
   },[]);
+  
+
 
   const a = 1;
   return (
