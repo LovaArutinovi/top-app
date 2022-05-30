@@ -1,24 +1,21 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Htag, Tag } from '../components';
+import { Button, Htag, Rating, Tag } from '../components';
 import { P } from '../components/P/P';
+import { Layout, withLayout } from '../layout/Layout';
 
-export default function Home() {
-  const [counter, setCounter] = useState<number>(0)
+export function Home() {
+  const [counter, setCounter] = useState<number>(0);
+  const [rating, setRating] = useState<number>(4);
+
 
   useEffect(()=>{
-    console.log('counter ' + counter);
     return function cleanup(){
-      console.log('unmount')
     }
   });
   
   useEffect(()=>{  
-      console.log('mounted');
   },[]);
   
-
-
-  const a = 1;
   return (
     <>
         <Htag tag='h1'>{counter}</Htag>
@@ -34,6 +31,10 @@ export default function Home() {
         <Tag size='small' color='gray'>Lorem ipsum dolor sit</Tag>
         <Tag size='small' color='primary'>Lorem ipsum dolor sit</Tag>
         <Tag size='small' href='#'>Lorem ipsum dolor sit</Tag>
+        <Rating rating={rating}  setRating={setRating} isEditable/>
+
     </> 
   )
 }
+
+export default withLayout(Home)
