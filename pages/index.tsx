@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button, Htag, Rating, Tag } from '../components';
 import { P } from '../components/P/P';
-import { Layout, withLayout } from '../layout/Layout';
+import { withLayout } from '../layout/Layout';
 
 export function Home() {
   const [counter, setCounter] = useState<number>(0);
