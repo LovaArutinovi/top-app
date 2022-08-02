@@ -78,13 +78,6 @@ function Home({ menu, firstCategory }: HomeProps) {
       <Tag size="small" href="#">
         Lorem ipsum dolor sit
       </Tag>
-      {menu && (
-        <ul>
-          {menu.map((element, index) => (
-            <li>{element._id.secondCategory}</li>
-          ))}
-        </ul>
-      )}
 
       <Rating rating={rating} setRating={setRating} isEditable />
     </>
