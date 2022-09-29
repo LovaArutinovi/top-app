@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps<SearchProps> = async ({
       firstCategory,
     }
   );
-  console.log(menu.flatMap((m) => m.pages.map((p) => "/courses/" + p.alias)));
+  // console.log(menu.flatMap((m) => m.pages.map((p) => "/courses/" + p.alias)));
   return {
     props: {
       menu,
