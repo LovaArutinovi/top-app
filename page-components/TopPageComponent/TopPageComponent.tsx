@@ -1,12 +1,26 @@
-import { Card, HhData, Htag, Tag } from "components";
+import { Advantages, Card, HhData, Htag, P, Tag } from "components";
 import { TopPageComponentProps } from "./TopPageComponent.props";
 import styles from "./TopPageComponent.module.css";
 import { TopLevelCategory } from "interfaces/page.interface";
+import { Sort } from "components/Sort/Sort";
+import { SortEnum } from "components/Sort/Sort.props";
+import { useReducer } from "react";
+import { sortReducer } from "./sort.reduce";
 export const TopPageComponent = ({
   page,
   products,
   firstCategory,
 }: TopPageComponentProps): JSX.Element => {
+  const [{ products: sortedProducts, sort }, dispatchSort] = useReducer(
+    sortReducer,
+    {
+      products,
+      sort: SortEnum.Rating,
+    }
+  );
+  const setSort = (sort: SortEnum) => {
+    dispatchSort({ type: sort });
+  };
   return (
     <div className={styles.wrapper}>
       <div className={styles.title}>
@@ -16,10 +30,11 @@ export const TopPageComponent = ({
             {products.length}
           </Tag>
         )}
-        <span>Sort</span>
+        <Sort sort={sort} setSort={setSort} />
       </div>
       <div>
-        {products && products.map((p) => <div key={p._id}>{p.title}</div>)}
+        {sortedProducts &&
+          sortedProducts.map((p) => <div key={p._id}>{p.title}</div>)}
       </div>
       <div className={styles.hhTitle}>
         <Htag tag="h2">Вакансии - {page.category}</Htag>
@@ -29,7 +44,27 @@ export const TopPageComponent = ({
           </Tag>
         )}
       </div>
-      {firstCategory == TopLevelCategory.Courses && <HhData {...page.hh} />}
+      {firstCategory == TopLevelCategory.Courses && page.hh && (
+        <HhData {...page.hh} />
+      )}
+      {page.advantages && page.advantages.length > 0 && (
+        <>
+          <Htag tag="h2">Преимущества</Htag>
+          <Advantages advantages={page.advantages} />
+        </>
+      )}
+      {page.seoText && (
+        <div
+          className={styles.seo}
+          dangerouslySetInnerHTML={{ __html: page.seoText }}
+        ></div>
+      )}
+      <Htag tag="h2">Получаемые навыки</Htag>
+      {page.tags.map((t) => (
+        <Tag key={t} color="primary" size="small">
+          {t}
+        </Tag>
+      ))}
     </div>
   );
 };

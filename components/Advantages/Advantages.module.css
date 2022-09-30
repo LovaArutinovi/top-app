@@ -1,0 +1,22 @@
+.advantages{
+
+}
+.advantage{
+	margin-bottom: 30px;
+	display: grid;
+	gap: 10px 40px;
+	grid-template-columns: 50px 1fr;
+}
+.title{
+	align-self: center;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 27px;
+}
+
+.vline{
+	width: 1px;
+	border-left: 1px solid #D2D2D2;
+	align-self: stretch;
+	justify-self: center;
+}

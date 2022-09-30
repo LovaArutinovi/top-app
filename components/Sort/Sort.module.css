@@ -1,0 +1,32 @@
+.sortIcon{
+	opacity: 0;
+	transition: all .2s;
+	-webkit-transition: all .2s;
+	-moz-transition: all .2s;
+	-ms-transition: all .2s;
+	-o-transition: all .2s;
+}
+
+.active .sortIcon{
+	opacity: 1;
+}
+.active {
+	display: grid;
+	grid-template-columns: 20px 1fr;
+	align-items: center;
+
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 22px;
+	color: var(--primary);
+}
+.sort{
+	display: grid;
+	grid-template-columns: auto auto;
+	gap: 40px;
+}
+
+.sort span{
+	cursor: pointer;
+	gap: 8px;
+}
