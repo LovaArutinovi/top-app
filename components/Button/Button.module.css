@@ -9,6 +9,9 @@
 	font-size: 14px;
 	transition: all .2s;
 }
+.button:active{
+	transform: scale(.95);
+}
 
 .primary {
 	color: var(--white);
@@ -35,9 +38,11 @@
 	margin-left: 10px;
 	transition: all .3s;
 }
-
+.arrow svg{
+	transition: all .2s;
+}
 .primary svg,
-.ghost:hover {
+.ghost:hover svg{
 	fill: var(--white);
 }
 

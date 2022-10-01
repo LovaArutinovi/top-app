@@ -60,7 +60,6 @@ export const getStaticProps: GetStaticProps<TopPageProps> = async ({
         firstCategory: firstCategoryItem.id,
       }
     );
-    console.log("menu", menu);
     if (menu.length == 0) {
       return {
         notFound: true,

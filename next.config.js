@@ -10,7 +10,6 @@ module.exports = {
 				prettier: false,
 				svgo: true,
 				svgoConfig: {
-					// plugins: [{ removeViewBox: false }],
 					plugins: [{ 
 						name: 'preset-default',
 						params: {
@@ -18,7 +17,7 @@ module.exports = {
 								removeViewBox: false
 							}
 						}
-					 }],
+					}],
 				},
 				titleProp: true,
 			},

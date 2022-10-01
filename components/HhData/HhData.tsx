@@ -15,7 +15,7 @@ export const HhData = ({
     <div className={styles.hh}>
       <Card className={styles.count}>
         <div className={styles.title}>Всего вакансии</div>
-        <div className={styles.countValue}>{priceRu(count)}</div>
+        <div className={styles.countValue}>{priceRu(count, false)}</div>
       </Card>
       <Card className={styles.salary}>
         <div>

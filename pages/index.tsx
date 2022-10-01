@@ -1,11 +1,12 @@
 import { GetStaticProps, GetStaticPropsContext } from "next";
 import React, { useEffect, useState } from "react";
-import { Button, Htag, Rating, Tag } from "../components";
+import { Button, Htag, Input, Rating, Tag } from "../components";
 import { P } from "../components/P/P";
 import { withLayout } from "../layout/Layout";
 import axios from "axios";
 import { MenuItem } from "interfaces/menu.interface";
 import { ParsedUrlQuery } from "querystring";
+import { Textarea } from "components/Textarea/Textarea";
 
 function Home({ menu, firstCategory }: HomeProps) {
   const [counter, setCounter] = useState<number>(0);
@@ -80,6 +81,8 @@ function Home({ menu, firstCategory }: HomeProps) {
       </Tag>
 
       <Rating rating={rating} setRating={setRating} isEditable />
+      <Input placeholder="test" />
+      <Textarea placeholder="text" value="testtt" />
     </>
   );
 }
