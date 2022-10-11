@@ -11,7 +11,7 @@ export const Card = ({
   return (
     <div
       className={cn(styles.card, className, {
-        [styles.blue]: color == "white",
+        [styles.blue]: color == "blue",
       })}
       {...props}
     >

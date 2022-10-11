@@ -1,7 +1,7 @@
 .input {
    padding: 7px 15px;
 
-   font-style: var(--font-family);
+   font-family: var(--font-family);
    font-weight: 400;
    font-size: 16px;
    line-height: 22px;
@@ -18,5 +18,4 @@
 }
 .input:focus{
    outline: 1px solid var(--primary);
-
 }

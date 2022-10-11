@@ -1,7 +1,7 @@
 /* grids */
 .product {
    padding: 30px;
-   margin-bottom: 30px;
+   margin-top: 30px;
    display: grid;
    grid-template-columns: [start] 70px [logoend] 30px [titlestart] calc(50% - 100px) [middle] 1fr [pricestart] auto [priceend] 40px [creditstart] auto [creditend] 40px [ratestart] auto [end];
 }
@@ -157,6 +157,18 @@
 .characteristicsValue {
    font-weight: 500;
 }
+.reviews{
+   /* margin-top: -30px; */
+}
+.closed{
+   overflow: hidden;
+   max-height: 0;
+   padding: 0;
+}
+.opened {
+   max-height: auto;
+   padding: 30px;
+}
 
 @media (max-width: 1320px) {
    .product {
@@ -173,6 +185,9 @@
          "hr2 hr2 hr2 hr2 hr2 hr2 hr2"
          "actions actions actions actions actions actions actions"
       ;
+   }
+   .characteristics {
+      padding-right: 0;
    }
 
    .logo {
