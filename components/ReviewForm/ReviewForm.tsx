@@ -11,7 +11,12 @@ export const ReviewForm = ({
   className,
   ...props
 }: ReviewFormProps): JSX.Element => {
-  const { register, control, handleSubmit } = useForm<IReviewForm>();
+  const {
+    register,
+    control,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<IReviewForm>();
 
   const onSubmit = (data: IReviewForm) => {
     console.log(data);
@@ -20,10 +25,19 @@ export const ReviewForm = ({
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className={cn(styles.reviewForm, className)} {...props}>
-        <Input {...register("name")} placeholder="Имя" />
         <Input
-          {...register("title")}
+          {...register("name", {
+            required: { value: true, message: "Заполните имя" },
+          })}
+          error={errors.name}
+          placeholder="Имя"
+        />
+        <Input
+          {...register("title", {
+            required: { value: true, message: "Заполните заголовок" },
+          })}
           className={styles.title}
+          error={errors.title}
           placeholder="Заголовок отзыва"
         />
         <div className={styles.rating}>
@@ -31,19 +45,24 @@ export const ReviewForm = ({
           <Controller
             control={control}
             name="rating"
+            rules={{ required: { value: true, message: "Укажите рейтинг" } }}
             render={({ field }) => (
               <Rating
                 rating={field.value}
-                isEditable={true}
+                isEditable
                 ref={field.ref}
                 setRating={field.onChange}
+                error={errors.rating}
               />
             )}
           />
         </div>
         <Textarea
-          {...register("description")}
           className={styles.description}
+          {...register("description", {
+            required: { value: true, message: "Заполните описание" },
+          })}
+          error={errors.description}
           placeholder="Текст отзыва"
         />
         <div className={styles.submit}>

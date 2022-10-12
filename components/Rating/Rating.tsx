@@ -12,7 +12,14 @@ import { RatingProps } from "./Rating.props";
 
 export const Rating = forwardRef(
   (
-    { isEditable = false, rating, className, setRating, ...props }: RatingProps,
+    {
+      isEditable = false,
+      error,
+      rating,
+      className,
+      setRating,
+      ...props
+    }: RatingProps,
     ref: ForwardedRef<HTMLSpanElement>
   ): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(
@@ -22,7 +29,7 @@ export const Rating = forwardRef(
     useEffect(() => {
       constructRating(rating);
     }, [rating]);
-
+    console.log(error);
     const constructRating = (currentRating: number) => {
       const updatedArray = ratingArray.map((r: JSX.Element, i: number) => {
         return (
@@ -68,10 +75,16 @@ export const Rating = forwardRef(
       setRating(i);
     };
     return (
-      <div {...props}>
+      <div
+        {...props}
+        className={cn(styles.ratingWrapper, {
+          [styles.error]: error,
+        })}
+      >
         {ratingArray.map((r, i) => (
           <span key={i}>{r}</span>
         ))}
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
       </div>
     );
   }

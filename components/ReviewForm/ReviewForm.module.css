@@ -14,9 +14,8 @@
 	grid-column: start / end;
 }
 
-.description {
+.description textarea {
 	height: 76px;
-
 }
 
 .title {
