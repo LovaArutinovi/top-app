@@ -32,9 +32,8 @@
 	gap: 20px;
 }
 
-.success {
+.panel{
 	margin-top: 20px;
-	background: var(--green-light);
 	padding: 20px;
 	position: relative;
 	border-radius: 5px;
@@ -42,6 +41,10 @@
 	-moz-border-radius: 5px;
 	-ms-border-radius: 5px;
 	-o-border-radius: 5px;
+}
+
+.success {
+	background: var(--green-light);
 }
 
 .successTitle {
@@ -54,7 +57,15 @@
 	right: 20px;
 	cursor: pointer;
 }
-
+.error{
+	background: var(--red-light);
+}
+.errorTitle{
+	font-weight: bold;
+}
+.errorClose{
+	stroke: var(--red);
+}
 @media(max-width: 1160px) {
 	.reviewForm {
 		grid-template-columns: [start] 1fr 1fr [end];

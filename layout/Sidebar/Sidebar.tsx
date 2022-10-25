@@ -12,7 +12,9 @@ export const Sidebar = ({ className, ...props }: SidebarProps): JSX.Element => {
     <>
       <div className={cn(className, styles.sidebar)} {...props}>
         <Link href="/">
-          <Logo className={styles.logo} />
+          <a href="#">
+            <Logo className={styles.logo} />
+          </a>
         </Link>
         <Search />
         <Menu />

@@ -26,7 +26,13 @@
 	gap: 40px;
 }
 
-.sort span{
+.sort button{
 	cursor: pointer;
 	gap: 8px;
+	
+	font-size: 16px;
+	line-height: 22px;
+	
+	border: 0;
+	background: none;
 }

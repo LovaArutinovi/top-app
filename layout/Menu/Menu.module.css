@@ -29,9 +29,10 @@
 	color: var(--gray-dark);
 	font-weight: 300;
 	font-size: 12px;
-	line-height: 16px;
+	/* line-height: 16px; */
 
 	cursor: pointer;
+	outline-offset: -2px;
 }
 
 .secondBlock {
@@ -41,15 +42,15 @@
 
 }
 .secondLevelBlock{
-	display: none;
+	overflow: hidden;
 }
-.secondLevelBlockOpened {
+/* .secondLevelBlockOpened {
 	display: block;
 }
 
 .secondLevelBlockOpened:last-child {
 	margin-bottom: 20px;
-}
+} */
 
 .thirdLevel {
 	margin-bottom: 10px;
@@ -58,9 +59,10 @@
 	color: var(--gray-dark);
 	font-weight: 500;
 	font-size: 14px;
-	line-height: 19px;
+	/* line-height: 19px; */
 
 	cursor: pointer;
+	outline-offset: -2px;
 }
 .thirdLevelActive,
 .thirdLevel:hover{

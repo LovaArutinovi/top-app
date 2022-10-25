@@ -7,6 +7,7 @@ import axios from "axios";
 import { MenuItem } from "interfaces/menu.interface";
 import { ParsedUrlQuery } from "querystring";
 import { Textarea } from "components/Textarea/Textarea";
+import { API } from "helpers/api";
 
 function Home({ menu, firstCategory }: HomeProps) {
   const [counter, setCounter] = useState<number>(0);
@@ -79,10 +80,6 @@ function Home({ menu, firstCategory }: HomeProps) {
       <Tag size="small" href="#">
         Lorem ipsum dolor sit
       </Tag>
-
-      <Rating rating={rating} setRating={setRating} isEditable />
-      <Input placeholder="test" />
-      <Textarea placeholder="text" value="testtt" />
     </>
   );
 }
@@ -93,12 +90,9 @@ export const getStaticProps: GetStaticProps<HomeProps> = async ({
   params,
 }: GetStaticPropsContext<ParsedUrlQuery>) => {
   const firstCategory = 0;
-  const { data: menu } = await axios.post<MenuItem[]>(
-    process.env.NEXT_PUBLIC_DOMAIN + "/api/top-page/find",
-    {
-      firstCategory,
-    }
-  );
+  const { data: menu } = await axios.post<MenuItem[]>(API.topPage.find, {
+    firstCategory,
+  });
   console.log(menu.flatMap((m) => m.pages.map((p) => "/courses/" + p.alias)));
   return {
     props: {

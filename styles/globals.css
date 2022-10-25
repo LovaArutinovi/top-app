@@ -24,12 +24,13 @@ a {
 :root {
 	--black: #3B434E;
 	--gray-light: #EBEBEB;
-	--gray-dark: #787D85;
+	--gray-dark: #62666c;
 	--white: white;
-	--primary: #7653FC;
+	--primary: #6a58b1;
 	--primary-hover: #5331da;
 	--red: #FC836D;
-	--green: #1DC37E;
+	--red-light: #fea291;
+	--green: #007b48;
 	--green-light: #C8F8E4;
 	--font-family: "Noto Sans KR", sans-serif;
 }

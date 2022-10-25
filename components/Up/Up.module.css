@@ -1,0 +1,17 @@
+.up {
+	position: fixed;
+	bottom: 30px;
+	right: 30px;
+}
+
+
+.up:active{
+	transform: scale(.90);
+}
+/* .up svg{
+	transition: all .2s;
+}
+
+.up:hover svg{
+	fill: var(--primary);
+} */

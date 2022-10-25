@@ -5,9 +5,11 @@
 .filled svg {
 	fill: var(--primary);
 }
-
+.star {
+	display: inline-block;
+}
 .star svg {
-	margin-right: 5px;
+	margin: 0 3px;
 }
 .error svg{
 	stroke: var(--red);
